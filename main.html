@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sweet Shop System</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="#add">Add Sweet</a>
+    <a href="#delete">Delete Sweet</a>
+    <a href="#view">View Sweets</a>
+    <a href="#purchase">Purchase</a>
+    <a href="#restock">Restock</a>
+  </div>
+
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by name or category...">
+    </div>
+
+    <div id="add" class="section">
+      <h2>Add Sweet</h2>
+      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Category">
+      <input type="number" placeholder="Price">
+      <input type="number" placeholder="Quantity">
+      <button>Add Sweet</button>
+    </div>
+
+    <div id="delete" class="section">
+      <h2>Delete Sweet</h2>
+      <input type="text" placeholder="Sweet ID">
+      <button>Delete Sweet</button>
+    </div>
+
+    <div id="view" class="section">
+      <h2>View Sweets</h2>
+      <!-- Table of sweets will go here -->
+    </div>
+
+    <div id="purchase" class="section">
+      <h2>Purchase Sweet</h2>
+      <input type="text" placeholder="Sweet ID">
+      <input type="number" placeholder="Quantity">
+      <button>Purchase</button>
+    </div>
+
+    <div id="restock" class="section">
+      <h2>Restock Sweet</h2>
+      <input type="text" placeholder="Sweet ID">
+      <input type="number" placeholder="Quantity">
+      <button>Restock</button>
+    </div>
+  </div>
+
+</body>
+</html>
