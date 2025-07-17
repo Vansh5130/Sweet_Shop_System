@@ -1,6 +1,6 @@
 # Sweet_Shop_System
 
-Sweet_Shop_System is a basic inventory management system for a sweet shop. It is built using JavaScript and follows the principles of Test-Driven Development (TDD). The system allows users to add, view, delete, search, purchase, and restock sweets. A simple HTML interface can also be added optionally.
+Sweet_Shop_System is a basic inventory management system for a sweet shop. It is built using JavaScript and follows the principles of Test-Driven Development (TDD). The system allows users to add, view, delete, search, purchase, and restock sweets. A simple HTML interface will help you.
 
 ## Features
 
@@ -18,6 +18,8 @@ Sweet_Shop_System is a basic inventory management system for a sweet shop. It is
 - enter the url in browser which will be provided after successful execution of server.js
 - the url should look like this (http://localhost:3000) add the name of the html page (http://localhost:3000/main.html?#)
 - now you can access the system
+- the heading shows the inventory when you click on it you will be navigated to the inventory
+- on top left corner there is a drop down menu from which you can access all the features 
 
 ## how it works 
 
