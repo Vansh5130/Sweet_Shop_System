@@ -7,53 +7,83 @@
 </head>
 <body>
 
-  <div class="navbar">
-    <a href="#add">Add Sweet</a>
-    <a href="#delete">Delete Sweet</a>
-    <a href="#view">View Sweets</a>
-    <a href="#purchase">Purchase</a>
-    <a href="#restock">Restock</a>
+  <div class="sidebar">
+    <select id="navSelect" onchange="handleNavigation(this.value)">
+      <option value="">-- Select Action --</option>
+      <option value="add">Add Sweet</option>
+      <option value="delete">Delete Sweet</option>
+      <option value="purchase">Purchase Sweet</option>
+      <option value="restock">Restock Sweet</option>
+    </select>
   </div>
 
-  <div class="container">
+  <div class="main-content">
+    <a href="#" id="homeLink" onclick="showHome()">Inventory</a>
+
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search by name or category...">
+      <input type="text" id="searchInput" placeholder="Search sweets by name/category...">
     </div>
 
-    <div id="add" class="section">
+    <div id="sweetList" class="section">
+      <!-- Available sweets will be shown here -->
+      <h2>Available Sweets</h2>
+      <div id="sweetsDisplay">No sweets to show.</div>
+    </div>
+
+    <!-- Add Sweet Form -->
+    
+    <form id="addForm" class="section form-section" style="display:none">
       <h2>Add Sweet</h2>
-      <input type="text" placeholder="Name">
-      <input type="text" placeholder="Category">
-      <input type="number" placeholder="Price">
-      <input type="number" placeholder="Quantity">
-      <button>Add Sweet</button>
-    </div>
+      <input type="text" id="addId" placeholder="ID" required>
+      <input type="text" id="addName" placeholder="Name" required>
+      <input type="text" id="addCategory" placeholder="Category" required>
+      <input type="number" id="addPrice" placeholder="Price" required>
+      <input type="number" id="addQuantity" placeholder="Quantity" required>
+      <button type="submit">Add Sweet</button>
+    </form>
+    
 
-    <div id="delete" class="section">
+    <!-- Delete Sweet Form -->
+    <form id="deleteForm" class="section form-section" style="display:none">
       <h2>Delete Sweet</h2>
-      <input type="text" placeholder="Sweet ID">
-      <button>Delete Sweet</button>
-    </div>
+      <input type="number" id="deleteId" placeholder="Sweet ID" required>
+      <button type="submit">Delete Sweet</button>
+    </form>
 
-    <div id="view" class="section">
-      <h2>View Sweets</h2>
-      <!-- Table of sweets will go here -->
-    </div>
-
-    <div id="purchase" class="section">
+    <!-- Purchase Sweet Form -->
+    <form id="purchaseForm" class="section form-section" style="display:none">
       <h2>Purchase Sweet</h2>
-      <input type="text" placeholder="Sweet ID">
-      <input type="number" placeholder="Quantity">
-      <button>Purchase</button>
-    </div>
+      <input id="purchaseId" type="text" placeholder="Sweet ID" required>
+  <input id="purchaseQty" type="number" placeholder="Quantity to Purchase" required>
+      <button type="submit">Purchase</button>
+    </form>
 
-    <div id="restock" class="section">
+    <!-- Restock Sweet Form -->
+    <form id="restockForm" class="section form-section" style="display:none">
       <h2>Restock Sweet</h2>
-      <input type="text" placeholder="Sweet ID">
-      <input type="number" placeholder="Quantity">
-      <button>Restock</button>
-    </div>
+      <input id="restockId" type="text" placeholder="Sweet ID" required>
+      <input id="restockQty" type="number" placeholder="Quantity to Add" required>
+      <button type="submit">Restock</button>
+    </form>
   </div>
+
+  <script>
+    function handleNavigation(selected) {
+      const forms = ['addForm', 'deleteForm', 'purchaseForm', 'restockForm'];
+      forms.forEach(id => document.getElementById(id).style.display = 'none');
+      if (selected) {
+        document.getElementById('sweetList').style.display = 'none';
+        document.getElementById(selected + 'Form').style.display = 'block';
+      }
+    }
+
+    function showHome() {
+      const forms = document.querySelectorAll('.form-section');
+      forms.forEach(form => form.style.display = 'none');
+      document.getElementById('sweetList').style.display = 'block';
+    }
+  </script>
+<script src="main.js"></script>
 
 </body>
 </html>
